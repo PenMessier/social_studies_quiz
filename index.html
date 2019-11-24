@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Social studies quiz</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--<link rel="stylesheet" type="text/css" href="./main.css">-->
+
+	<!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700i&display=swap" rel="stylesheet">-->
+
+	<link
+		rel="stylesheet"
+		href="./bootstrap-4.3.1-dist/css/bootstrap.min.css"
+	/>
+	<!--<link
+		rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+		crossorigin="anonymous"
+	/>-->
+	
+	<script
+		src="./jquery-3.4.1.js"
+	></script>
+	<script
+		src="./bootstrap-4.3.1-dist/js/bootstrap.min.js"
+	></script>
+
+	<script type="text/javascript" src="./main.js"></script>
+	<script type="text/javascript" src="./quiz.component.js"></script>
+	<script type="text/javascript" src="./quiz.js"></script>
+	<script type="text/javascript" src="./quiz.model.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default mb-5" style="background-color: rgb(36, 139, 53); color: #fff">
+				<h1 class="header">Social Studies Quiz</h1>
+		</nav>
+		<div id="main" class="container col-10 mb-5">
+			<div  class="text-center">
+				<p class="lead">
+					You have 1 hour to perform the quiz. Whenever you are ready just push the button below.
+				</p>
+				<p class="lead">
+					Good luck!
+				</p>
+				<button type="button" class="btn btn-success" data-start-quiz>Start quiz</button>
+		</div>
+		</div>
+
+		<script type="text/template" data-template="question">
+			<h5 class="lead text-center mb-2">Score: <span class="text-success" data-moment-score></span> / <span style="color: #7C005A" data-quest-count></span></h5>
+			<div class="card border-success">
+				<h5 class="card-header" style="color: #7C005A">
+					Question #<span data-quest-number></span>
+				</h5>
+				<div class="card-body">
+					<p class="lead text-justify" data-quest-text>
+					</p>
+					<div class="container" data-answer-options>
+						<button type="submit" class="btn btn-success mt-4 mx-auto" data-confirm-answer disabled="disabled">Answer</button>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/template" data-template="answer">
+			<div class="form-check mx-auto">
+				<input class="form-check-input" type="checkbox" name="questOptions" data-answer-option-id>
+				<label class="lead form-check-label" for="questOptions" data-answer-option>
+				</label>
+			</div>
+		</script>
+
+		<script type="text/template" data-template="commentAnswer">
+			<h5 class="mt-3 mb-3">>>>>>>>>>>>>>> <span data-answer-status></span> <<<<<<<<<<<<<<<h5>
+			<p class="lead" data-comment-answer>
+			</p>
+			<button type="button" class="btn btn-success" data-next-quest>Next ></button>
+		</script>
+
+		<script type="text/template" data-template="lastPage">
+			<p class="lead text-center">
+				You have finished your test with a score <span class="text-success" data-moment-score></span> / <span style="color: #7C005A" data-quest-count></span>.
+			</p>
+			<p class="lead text-center">
+				Your grade is <span data-grade></span>.
+			</p>
+		</script>
+	</body>
+	<footer class="container-fluid" style="background-color: rgb(36, 139, 53); height: 50px">
+		<blockquote class="blockquote text-right" style="vertical-align: center">
+			<p style="color: #fff; font-size: 15px"><em>
+				If you fail to prepare you prepare to fail
+			</em></p>
+		</blockquote>
+	</footer>
+	</html>
